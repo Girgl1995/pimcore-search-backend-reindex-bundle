@@ -1,0 +1,3 @@
+search_backend_reindex:
+    resource: "../../src/Controller/"
+    type: attribute

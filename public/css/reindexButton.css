@@ -1,0 +1,9 @@
+.reindex-button {
+    border-top-width: 1px !important;
+}
+
+.reindex_icon_refresh {
+    background-color: #fff;
+    -webkit-mask: url(/bundles/pimcoreadmin/img/flat-color-icons/refresh.svg) center center no-repeat;
+    mask: url(/bundles/pimcoreadmin/img/flat-color-icons/refresh.svg) center center no-repeat;
+}

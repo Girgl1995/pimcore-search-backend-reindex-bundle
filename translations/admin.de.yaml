@@ -1,0 +1,7 @@
+reindex_already_running: Eine Anfrage zur Reindexierung wurde bereits gestellt.
+reindex_started: Eine Anfrage zur Reindexierung wurde gestellt.
+search_backend_reindex: Suche reindexieren
+reindex_completed_title: Suche aktualisiert
+reindex_completed_message: Die Suche wurde reindexiert.
+reindex_failed_title: Suche konnte nicht aktualisiert werden
+reindex_failed_message: "Beim Aktualisieren der Suche ist ein Fehler aufgetreten. Fehler: %s"

@@ -1,0 +1,35 @@
+framework:
+    messenger:
+        transports:
+            search_backend_reindex: "doctrine://default?queue_name=backend_search_reindex"
+        routing:
+            Factotum\SearchBackendReindexBundle\Message\SearchBackendReindexMessage: search_backend_reindex
+
+doctrine_migrations:
+    migrations_paths:
+        Factotum\SearchBackendReindexBundle\Migrations: '@PimcoreSearchBackendReindexBundle/src/Migrations'
+
+doctrine:
+    orm:
+        entity_managers:
+            pimcore:
+                connection: default
+                mappings:
+                    PimcoreSearchBackendReindexBundle:
+                        type: attribute
+                        is_bundle: true
+                        dir: "src/Entity"
+                        prefix: Factotum\SearchBackendReindexBundle\Entity
+                        alias: PimcoreSearchBackendReindexBundle 
+
+monolog:
+    channels:
+        - factotum.search_backend.reindex
+
+    handlers:
+        factotum_search_backend_reindex:
+            type: stream
+            path: '%kernel.logs_dir%/dev-error.log'
+            level: info
+            channels:
+                - factotum.search_backend.reindex

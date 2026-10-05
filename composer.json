@@ -1,0 +1,32 @@
+{
+  "name": "factotum/search-backend-reindex-bundle",
+  "description": "Allows to re-index the backend search of Pimcore directly from the Pimcore UI",
+  "type": "pimcore-bundle",
+  "keywords": [
+      "pimcore",
+      "pimcore-bundle",
+      "search",
+      "backend-search",
+      "search-reindex",
+      "reindex",
+      "factotum",
+      "open-source",
+      "girgl"
+  ],
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Girgl1995",
+      "email": "girgl1995@proton.me",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "pimcore/pimcore": "^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Factotum\\SearchBackendReindexBundle\\": "src/"
+    }
+  }
+}

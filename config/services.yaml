@@ -1,0 +1,31 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Factotum\SearchBackendReindexBundle\Installer:
+        public: true
+
+    Factotum\SearchBackendReindexBundle\EventSubscriber\AdminAssetSubscriber: ~
+
+    Factotum\SearchBackendReindexBundle\Service\SearchBackendReindexService: ~
+
+    Factotum\SearchBackendReindexBundle\MessageHandler\SearchBackendReindexMessageHandler: 
+        tags:
+            - { name: messenger.message_handler }
+        arguments:
+            $logger: '@monolog.logger.factotum.search_backend.reindex'
+
+    Factotum\SearchBackendReindexBundle\Controller\SearchBackendReindexController: ~
+
+    Factotum\SearchBackendReindexBundle\Repository\SearchBackendReindexRepository: ~
+
+    Factotum\SearchBackendReindexBundle\Service\SearchBackendReindexEntityService: ~
+
+    Factotum\SearchBackendReindexBundle\Service\Command\CommandRunner:
+        arguments:
+            $memoryLimit: '%factotum_search_backend_reindex.memory_limit%'
+            $logger: '@monolog.logger.factotum.search_backend.reindex'
+
+    Factotum\SearchBackendReindexBundle\Service\Notification\NotificationSender: ~
